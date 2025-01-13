@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkmark Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .checkmark {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: url('https://www.shutterstock.com/image-vector/orange-check-mark-icon-tick-260nw-645168988.jpg') no-repeat center center / contain;
+      animation: bounce 2s ease-in-out, zoom 2s 2s forwards, transformToCircle 0.1s 4s forwards, moveLeftAndStay 1s 6s forwards;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(-20px); } /* Big bounce */
+      40% { transform: translateY(12px); }  /* Smaller bounce */
+      60% { transform: translateY(-12px); } /* Smaller bounce */
+      80% { transform: translateY(6px); }  /* Even smaller bounce */
+      100% { transform: translateY(0); }    /* Return to original position */
+    }
+
+    @keyframes zoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(30); background: #FE5F1E; }
+    }
+
+    @keyframes transformToCircle {
+      0% { 
+        transform: scale(30);
+        background: #FE5F1E;
+        border-radius: 0;
+      }
+      100% { 
+        transform: scale(30);
+        background: #FE5F1E;
+        border-radius: 50%;
+      }
+    }
+
+    @keyframes moveLeftAndStay {
+      0% {
+        transform: scale(20) translateX(0);
+        background: #FE5F1E;
+        opacity: 1;
+      }
+      100% {
+        transform: scale(3) translateX(-150%); /* Move to the left side */
+        background: #FE5F1E; /* Keep orange color */
+        opacity: 1; /* No fade */
+      }
+    }
+
+    .content {
+      opacity: 0;
+      position: absolute;
+      left: 0%;
+      animation: content-slide 1s 6s forwards;
+    }
+
+    @keyframes content-slide {
+      0% { right: -100%; opacity: 0; }
+      100% { right: 0; opacity: 1; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="checkmark"></div>
+    <div class="content">
+      <h1>Welcome to the Next Screen</h1>
+      <p>Here comes the new content after animation.</p>
+    </div>
+  </div>
+</body>
+</html>
