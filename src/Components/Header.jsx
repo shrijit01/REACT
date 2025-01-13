@@ -24,7 +24,7 @@ function Header({ user }) {
   };
 
   return (
-    <div className="bg-custom-green px-5 py-5 flex items-center justify-between w-screen">
+    <div className="bg-indigo-500 px-5 py-5 flex items-center justify-between w-screen">
       <div className="left">
         <h1 className="text-white text-bold text-xl">{user}</h1>
         {location.latitude && location.longitude ? (

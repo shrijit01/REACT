@@ -10,11 +10,12 @@ function Home() {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/photos"
+        "https://picsum.photos/v2/list"
       );
       const data = await response.json();
+      console.log(data)
       setImage(data);
-      console.log(Image);
+      console.log("Image",Image);
     } catch (error) {
       console.error("Error fetching data:", error);
       alert("Data not Found");
@@ -24,22 +25,22 @@ function Home() {
   };
 
   // var data = 20;
-  let data;
-  data = 20;
-  console.log(data);
+  // let data;
+  // data = 20;
+  // console.log(data);
 
   return (
     <div>
       <button
         onClick={fetchData}
-        className="btn bg-green-800 text-white text-bold px-5 py-2 rounded-md m-5 border-none"
+        className="btn bg-indigo-500 text-white text-bold px-5 py-2 rounded-md m-5 border-none"
       >
         Fetch
       </button>
       <div className="flex items-center justify-center">
-        <Loading />
+        {/* <Loading /> */}
         {/* <h1>{data}</h1> */}
-        {/* <Card Image={Image} loading={loading}/> */}
+        <Card Image={Image} loading={loading}/>
       </div>
     </div>
   );

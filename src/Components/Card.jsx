@@ -10,7 +10,7 @@ function Card({ Image, loading }) {
         <Loading />
       ) : Image ? (
         <>
-          <div className="grid grid-cols-4 gap-4 bg-zinc-400 snap-x h-lvh w-full  overflow-auto overeflow-scroll">
+          <div className="grid grid-cols-4 gap-4 bg-indigo-400 snap-x h-lvh w-full px-5  overflow-auto overeflow-scroll">
             {Image.map((image, index) => {
               return (
                 <div
@@ -24,7 +24,7 @@ function Card({ Image, loading }) {
                   className="bg-zinc-400 "
                 >
                   <img
-                    src={image.url}
+                    src={image.download_url}
                     alt="image"
                     style={{
                       height: "100%",
