@@ -10,7 +10,7 @@ function Card({ Image, loading }) {
         <Loading />
       ) : Image ? (
         <>
-          <div className="grid grid-cols-4 gap-4 bg-indigo-400 snap-x h-lvh w-full px-5  overflow-auto overeflow-scroll">
+          <div className="grid grid-cols-4 gap-4 bg-custom-400 snap-x h-lvh w-full px-5 py-5 overflow-auto overeflow-scroll">
             {Image.map((image, index) => {
               return (
                 <div
@@ -21,7 +21,7 @@ function Card({ Image, loading }) {
                     borderRadius: "10px",
                     overflow: "hidden",
                   }}
-                  className="bg-zinc-400 "
+                  className="bg-zinc-400 transition-transform duration-500 ease-in animate-fade-in"
                 >
                   <img
                     src={image.download_url}
@@ -38,7 +38,7 @@ function Card({ Image, loading }) {
           </div>
         </>
       ) : (
-        <div className="flex items-center justify-center h-100% w-100%">
+        <div className="flex items-center absolute top-[50%] justify-center h-100% w-100%">
           <h1>Images not Found</h1>
         </div>
       )}

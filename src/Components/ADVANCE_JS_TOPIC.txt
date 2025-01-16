@@ -1,3 +1,6 @@
 Fetch API 
 TRY CATCH
 ASYNC AWAIT
+Function
+Arrow Function 
+Fat arrow Function
